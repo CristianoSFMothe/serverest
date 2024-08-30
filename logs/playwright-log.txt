@@ -1,0 +1,71 @@
+{"level":30,"time":"2024-08-30T02:46:57.873Z","pid":105825,"hostname":"Ferreira","msg":"Listening on 38075"}
+(node:105825) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2024-08-30T02:46:57.888Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:46:57.888Z","pid":105825,"hostname":"Ferreira","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:46:57.890Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:46:57.890Z","pid":105825,"hostname":"Ferreira","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:46:57.893Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2024-08-30T02:46:58.146Z","pid":105825,"hostname":"Ferreira","msg":"Adding browser to stack: chromium, version: 128.0.6613.18"}
+{"level":30,"time":"2024-08-30T02:46:58.146Z","pid":105825,"hostname":"Ferreira","msg":"End of node method newBrowser"}
+{"level":30,"time":"2024-08-30T02:46:58.146Z","pid":105825,"hostname":"Ferreira","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2024-08-30T02:46:58.149Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method newPage"}
+{"level":30,"time":"2024-08-30T02:46:58.150Z","pid":105825,"hostname":"Ferreira","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2024-08-30T02:46:58.164Z","pid":105825,"hostname":"Ferreira","msg":"Changed active context"}
+{"level":30,"time":"2024-08-30T02:46:58.325Z","pid":105825,"hostname":"Ferreira","msg":"Video path: undefined"}
+{"level":30,"time":"2024-08-30T02:46:58.325Z","pid":105825,"hostname":"Ferreira","msg":"Changed active page"}
+{"level":30,"time":"2024-08-30T02:47:00.132Z","pid":105825,"hostname":"Ferreira","msg":"End of node method newPage"}
+{"level":30,"time":"2024-08-30T02:47:00.143Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method click"}
+{"level":30,"time":"2024-08-30T02:47:00.143Z","pid":105825,"hostname":"Ferreira","msg":"Strict mode is enabled, find Locator with css=a >> text=Cadastre-se in page."}
+{"level":30,"time":"2024-08-30T02:47:00.336Z","pid":105825,"hostname":"Ferreira","msg":"End of node method click"}
+{"level":30,"time":"2024-08-30T02:47:00.341Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method fillText"}
+{"level":30,"time":"2024-08-30T02:47:00.341Z","pid":105825,"hostname":"Ferreira","msg":"Strict mode is enabled, find Locator with id=nome in page."}
+{"level":30,"time":"2024-08-30T02:47:00.352Z","pid":105825,"hostname":"Ferreira","msg":"End of node method fillText"}
+{"level":30,"time":"2024-08-30T02:47:00.356Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method fillText"}
+{"level":30,"time":"2024-08-30T02:47:00.356Z","pid":105825,"hostname":"Ferreira","msg":"Strict mode is enabled, find Locator with id=email in page."}
+{"level":30,"time":"2024-08-30T02:47:00.365Z","pid":105825,"hostname":"Ferreira","msg":"End of node method fillText"}
+{"level":30,"time":"2024-08-30T02:47:00.370Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method fillText"}
+{"level":30,"time":"2024-08-30T02:47:00.370Z","pid":105825,"hostname":"Ferreira","msg":"Strict mode is enabled, find Locator with id=password in page."}
+{"level":30,"time":"2024-08-30T02:47:00.380Z","pid":105825,"hostname":"Ferreira","msg":"End of node method fillText"}
+{"level":30,"time":"2024-08-30T02:47:00.383Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method checkCheckbox"}
+{"level":30,"time":"2024-08-30T02:47:00.383Z","pid":105825,"hostname":"Ferreira","msg":"Strict mode is enabled, find Locator with id=administrador in page."}
+{"level":30,"time":"2024-08-30T02:47:00.429Z","pid":105825,"hostname":"Ferreira","msg":"End of node method checkCheckbox"}
+{"level":30,"time":"2024-08-30T02:47:00.432Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method click"}
+{"level":30,"time":"2024-08-30T02:47:00.432Z","pid":105825,"hostname":"Ferreira","msg":"Strict mode is enabled, find Locator with css=button >> text=Cadastrar in page."}
+{"level":30,"time":"2024-08-30T02:47:00.476Z","pid":105825,"hostname":"Ferreira","msg":"End of node method click"}
+{"level":30,"time":"2024-08-30T02:47:00.479Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2024-08-30T02:47:00.480Z","pid":105825,"hostname":"Ferreira","msg":"Strict mode is enabled, find Locator with css=a >> text=Cadastro realizado com sucesso in page."}
+{"level":30,"time":"2024-08-30T02:47:01.278Z","pid":105825,"hostname":"Ferreira","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2024-08-30T02:47:01.285Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2024-08-30T02:47:01.285Z","pid":105825,"hostname":"Ferreira","msg":"Strict mode is enabled, find Locator with css=h1 >> text=Bem Vindo Cristiano Ferreira in page."}
+{"level":30,"time":"2024-08-30T02:47:04.619Z","pid":105825,"hostname":"Ferreira","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2024-08-30T02:47:07.629Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2024-08-30T02:47:07.629Z","pid":105825,"hostname":"Ferreira","Take screenshot with options: ":{"path":"/home/cristiano/Documentos/workspace/serverest/logs/browser/screenshot/robotframework-browser-screenshot-1.png","fileType":"png","fullPage":true,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2024-08-30T02:47:07.716Z","pid":105825,"hostname":"Ferreira","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2024-08-30T02:47:07.719Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:47:07.721Z","pid":105825,"hostname":"Ferreira","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:47:07.722Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:47:07.724Z","pid":105825,"hostname":"Ferreira","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:47:07.725Z","pid":105825,"hostname":"Ferreira","msg":"Changed active context"}
+{"level":30,"time":"2024-08-30T02:47:07.725Z","pid":105825,"hostname":"Ferreira","msg":"Changing current active page: page=ad135f25-0ab4-4947-8b9d-eaca70ea6c89"}
+{"level":30,"time":"2024-08-30T02:47:07.725Z","pid":105825,"hostname":"Ferreira","msg":"Changed active page"}
+{"level":30,"time":"2024-08-30T02:47:07.729Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:47:07.733Z","pid":105825,"hostname":"Ferreira","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:47:07.736Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method switchBrowser"}
+{"level":30,"time":"2024-08-30T02:47:07.736Z","pid":105825,"hostname":"Ferreira","msg":"End of node method switchBrowser"}
+{"level":30,"time":"2024-08-30T02:47:07.737Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method switchBrowser"}
+{"level":30,"time":"2024-08-30T02:47:07.738Z","pid":105825,"hostname":"Ferreira","msg":"End of node method switchBrowser"}
+{"level":30,"time":"2024-08-30T02:47:07.739Z","pid":105825,"hostname":"Ferreira","msg":"Changing current active page: page=ad135f25-0ab4-4947-8b9d-eaca70ea6c89"}
+{"level":30,"time":"2024-08-30T02:47:07.739Z","pid":105825,"hostname":"Ferreira","msg":"Changed active page"}
+{"level":30,"time":"2024-08-30T02:47:07.742Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:47:07.743Z","pid":105825,"hostname":"Ferreira","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:47:07.746Z","pid":105825,"hostname":"Ferreira","msg":"Changed active context"}
+{"level":30,"time":"2024-08-30T02:47:07.746Z","pid":105825,"hostname":"Ferreira","msg":"Changing current active page: page=ad135f25-0ab4-4947-8b9d-eaca70ea6c89"}
+{"level":30,"time":"2024-08-30T02:47:07.746Z","pid":105825,"hostname":"Ferreira","msg":"Changed active page"}
+{"level":30,"time":"2024-08-30T02:47:07.747Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method closeContext"}
+{"level":30,"time":"2024-08-30T02:47:07.754Z","pid":105825,"hostname":"Ferreira","msg":"Removed page=3eb8edfc-82a9-4545-9264-c4995c8157e2 from context=80ea1938-facb-4d99-ad2c-5240dc39908c page stack"}
+{"level":30,"time":"2024-08-30T02:47:07.781Z","pid":105825,"hostname":"Ferreira","msg":"End of node method closeContext"}
+{"level":30,"time":"2024-08-30T02:47:07.786Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:47:07.786Z","pid":105825,"hostname":"Ferreira","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-08-30T02:47:07.806Z","pid":105825,"hostname":"Ferreira","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2024-08-30T02:47:07.872Z","pid":105825,"hostname":"Ferreira","msg":"End of node method closeAllBrowsers"}
