@@ -6,7 +6,7 @@ Resource             ../Base.resource
 
 *** Keywords ***
 
-Dado cliquei no botão Cadastre-se
+E clique no botão "Cadastre-se"
     
     Click    ${LINK_REGISTER}    
 
@@ -37,11 +37,3 @@ Então exibir a mensagem
     [Arguments]        ${msg}
 
     Wait For Elements State    css=a >> text=${msg}    visible    5
-
-E sou redirecionado para tela principal
-    [Arguments]        ${name}
-
-    Wait For Elements State    css=h1 >> text=${name}   visible    5   
-
-
-  
