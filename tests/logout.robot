@@ -12,12 +12,12 @@ Cenário: 01 - Criar conta como administrador
 
     ${user}    Get JSON    User
 
-    Dado que esteja na tela de login
-    E clique no botão "Cadastre-se"
-    E prencha o campo nome            ${user}[admin][name]
-    E prencha o campo email           ${user}[admin][email]
-    E prencha o campo password        ${user}[admin][password]
-    E marque como administrador
-    Quando clicar no botão "Cadastrar"
-    Então exibir a mensagem                    Cadastro realizado com sucesso
-    E sou redirecionado para tela principal    Bem Vindo ${user}[admin][name] 
+    Given I am on the login screen
+    And I click the "Sign Up" button
+    And I fill in the name field              ${user}[admin][name]
+    And I fill in the email field             ${user}[admin][email]
+    And I fill in the password field          ${user}[admin][password]
+    And I check the "Administrator" option
+    When I click the "Register" button
+    Then the message should be displayed      Cadastro realizado com sucesso
+    And I am redirected to the main screen    Bem Vindo ${user}[admin][name] 

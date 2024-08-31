@@ -5,26 +5,33 @@ Documentation        Arquivo de keywords da tela de criação de conta
 Resource             ../Base.resource
 
 *** Keywords ***
-E clique no botão "Cadastre-se"
+And I click the "Sign Up" button
     
     Click    ${LINK_REGISTER}    
 
-E prencha o campo nome 
+And I fill in the name field 
     [Arguments]    ${name}
     
     Fill Text    ${INPUT_NAME}    ${name}
 
-E marque como administrador
+And I check the "Administrator" option    
 
     Check Checkbox    ${INPUT_ADMIN}    
 
-Quando clicar no botão "Cadastrar"
+When I click the "Register" button
 
     Click    ${BTN_REGISTER}
 
-Então exibir a mensagem
+Then the message should be displayed
     [Arguments]        ${msg}
+    [Timeout]          10s
 
     Wait For Elements State    css=a >> text=${msg}    visible    5
+
+    Find User By Email
+
+    Sleep    3
+    
+    Detete User By Id 
 
 

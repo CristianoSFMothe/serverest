@@ -12,7 +12,8 @@ Cenário: 01 - Realizar login com conta de administrador
 
     ${user}    Get JSON    User
 
-    Dado que estou na tela de login
-    E preencha as credenciais                  ${user}[admin][email]    ${user}[admin][password]   
-    Quando clicar no botão "Entrar" 
-    E sou redirecionado para tela principal    Bem Vindo ${user}[admin][name]
+    Given I am on the login screen
+    And I fill in the email field                  ${user}[admin][email]    
+    And I fill in the password field               ${user}[admin][password]   
+    When I click the "Login" button 
+    And I am redirected to the main screen         Bem Vindo ${user}[admin][name]

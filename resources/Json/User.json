@@ -2,6 +2,7 @@
   "admin": {
     "name": "Cristiano Ferreira",
     "email": "cristiano@qa.com.br",
-    "password": "Abc@123"
+    "password": "Abc@123",
+    "administrador": true
   }
 }

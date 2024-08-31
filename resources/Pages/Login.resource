@@ -5,21 +5,22 @@ Resource             ../Base.resource
 
 *** Keywords ***
 
-Dado que esteja na tela de login
-    
+Given I am on the login screen
+
     Wait For Elements State   ${TITLE}    visible    5 
 
-E prencha o campo email 
+And I fill in the email field 
     [Arguments]    ${email}
     
     Fill Text    ${INPUT_EMAIL}    ${email}
 
-E prencha o campo password
+And I fill in the password field
     [Arguments]    ${password}
     
     Fill Text    ${INPUT_PASSWORD}    ${password}
 
-Quando clicar no botão entrar
+When I click the "Login" button
 
-    Click    ${BTN_REGISTER}
+    Click    ${BTN_LOGIN}
+
 
