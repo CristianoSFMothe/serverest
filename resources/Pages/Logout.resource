@@ -5,8 +5,7 @@ Documentation        Arquivo de keywords da tela de criação de conta
 Resource             ../Base.resource
 
 *** Keywords ***
-
-E clicar no botão "Cadastre-se"
+E clique no botão "Cadastre-se"
     
     Click    ${LINK_REGISTER}    
 
@@ -27,3 +26,5 @@ Então exibir a mensagem
     [Arguments]        ${msg}
 
     Wait For Elements State    css=a >> text=${msg}    visible    5
+
+

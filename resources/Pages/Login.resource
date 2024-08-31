@@ -1,5 +1,4 @@
 *** Settings ***
-
 Documentation        Arquivo de keywords da tela de login
 
 Resource             ../Base.resource
@@ -23,3 +22,4 @@ E prencha o campo password
 Quando clicar no botão entrar
 
     Click    ${BTN_REGISTER}
+
