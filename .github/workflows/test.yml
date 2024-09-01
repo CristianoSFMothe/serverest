@@ -13,10 +13,10 @@ jobs:
 
     steps:
     - name: Get Code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4.1.2
       
     - name: Use Node.js 20
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v4.0.2
       with:
         node-version: 20
 
@@ -42,4 +42,10 @@ jobs:
       with:
         gh_access_token: ${{ secrets.GITHUB_TOKEN }}
         report_path: logs
+
+    - name: Upload Report
+      uses: actions/upload-artifact@v4.3.5
+      with:
+        name:  Test Report
+        path: logs
 
