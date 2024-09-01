@@ -14,6 +14,16 @@ And I fill in the name field
     
     Fill Text    ${INPUT_NAME}    ${name}
 
+And I fill in the email field 
+    [Arguments]    ${email}
+    
+    Fill Text    ${INPUT_EMAIL}    ${email}
+
+And I fill in the password field
+    [Arguments]    ${password}
+    
+    Fill Text    ${INPUT_PASSWORD}    ${password}
+
 And I check the "Administrator" option    
 
     Check Checkbox    ${INPUT_ADMIN}    

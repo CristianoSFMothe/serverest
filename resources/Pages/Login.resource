@@ -9,18 +9,24 @@ Given I am on the login screen
 
     Wait For Elements State   ${TITLE}    visible    5 
 
-And I fill in the email field 
-    [Arguments]    ${email}
+And fill in the credentials
+    [Arguments]    ${email}    ${password}
+
+    Create User Admin
     
     Fill Text    ${INPUT_EMAIL}    ${email}
-
-And I fill in the password field
-    [Arguments]    ${password}
     
     Fill Text    ${INPUT_PASSWORD}    ${password}
 
 When I click the "Login" button
 
     Click    ${BTN_LOGIN}
+
+    Find User By Email
+
+    Sleep    3
+    
+    Detete User By Id 
+
 
 

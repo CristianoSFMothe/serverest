@@ -1,6 +1,6 @@
 *** Settings ***
 
-Documentation        Arquivos de variáveis globais criação de conta
+Documentation        Arquivos de variáveis globais em comum na aplicação
 
 *** Variables ***   
 ${INPUT_EMAIL}             id=email

@@ -60,7 +60,7 @@ Create User Admin
 
     Log    User created with ID: ${_id}
 
-    [Return]    ${response}
+    [RETURN]    ${response}
 
     
 Detete User By Id  
@@ -74,7 +74,7 @@ Detete User By Id
     ${message}              Get From Dictionary    ${response}    message 
     Set Suite Variable      ${message}
 
-    [Return]    ${response}
+    [RETURN]    ${response}
 
 Find User By Email
     ${user}    Get JSON    User
@@ -90,4 +90,4 @@ Find User By Email
 
     Log     _id: ${_id}    
 
-    [Return]    ${response.text}
+    [RETURN]    ${response}
