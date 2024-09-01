@@ -12,7 +12,9 @@ Given I am on the login screen
 And fill in the credentials
     [Arguments]    ${email}    ${password}
 
-    Create User Admin
+    ${user}    Get JSON    User
+
+    Create User Admin    ${user}[admin][name]    ${user}[admin][name]    ${user}[admin][name]
     
     Fill Text    ${INPUT_EMAIL}    ${email}
     
@@ -20,9 +22,11 @@ And fill in the credentials
 
 When I click the "Login" button
 
+    ${user}    Get JSON    User
+
     Click    ${BTN_LOGIN}
 
-    Find User By Email
+    Find User By Email    ${user}[admin][name]
 
     Sleep    3
     

@@ -1,8 +1,14 @@
 {
   "admin": {
     "name": "Cristiano Ferreira",
-    "email": "cristiano@qa.com.br",
+    "email": "cristiano@admin.com.br",
     "password": "Abc@123",
     "administrador": true
+  },
+  "user": {
+    "name": "Cristiano Ferreira",
+    "email": "cristiano@user.com.br",
+    "password": "Abc@123",
+    "administrador": false
   }
 }

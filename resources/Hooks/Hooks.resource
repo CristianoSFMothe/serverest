@@ -19,8 +19,9 @@ ${_id}
 
 *** Keywords ***
 Start Browser
-    New Browser    browser=${BROWSER}    headless=${IS_HEADLESS}
+    New Browser    browser=${BROWSER}    headless=${IS_HEADLESS}    
     New Page       ${BASE_URL}
+    Set Viewport Size    1920    1080
 
 Finish Browser
     Take Screenshot        fullPage=true
@@ -36,13 +37,12 @@ Get JSON
     Return From Keyword    ${json}
 
 Create User Admin
-
-    ${user}    Get JSON    User
+    [Arguments]    ${name}    ${email}    ${password}    
     
     ${payload}=    Create Dictionary
-    ...    nome=${user}[admin][name] 
-    ...    email=${user}[admin][email] 
-    ...    password=${user}[admin][password] 
+    ...    nome=${name}
+    ...    email=${email}
+    ...    password=${password}
     ...    administrador=true
 
     ${response}=    POST    ${API_URL}/usuarios
@@ -60,7 +60,7 @@ Create User Admin
 
     Log    User created with ID: ${_id}
 
-    [RETURN]    ${response}
+    RETURN    ${response}
 
     
 Detete User By Id  
@@ -74,14 +74,14 @@ Detete User By Id
     ${message}              Get From Dictionary    ${response}    message 
     Set Suite Variable      ${message}
 
-    [RETURN]    ${response}
+    RETURN    ${response}
 
 Find User By Email
-    ${user}    Get JSON    User
+    [Arguments]    ${email}  
 
     Create Session    alias=serverest    url=${API_URL}/    headers=${HEADERS}
 
-    ${params}=    Create Dictionary    email=${user}[admin][email]
+    ${params}=    Create Dictionary    email=${email}
 
     ${response}=    GET On Session    alias=serverest    url=usuarios    params=${params}
     ...    expected_status=200    msg=Usuário não encontrado
@@ -90,4 +90,4 @@ Find User By Email
 
     Log     _id: ${_id}    
 
-    [RETURN]    ${response}
+    RETURN    ${response}
