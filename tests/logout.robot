@@ -81,9 +81,9 @@ Cenário: 05 - Tentativa de cadastro campo senha vázio
     Then it should display the alert message      password é obrigatório
 
 
-Cenário: 04 - Tentativa de cadastro campo senha vázio
+Cenário: 04 - Tentativa de cadastro todos campos vázios
     [Documentation]    teste de tentantiva de cadastro falhas
-    [Tags]             attempt    
+    [Tags]             all_field_empty    
 
     ${user}    Get JSON    User
 
@@ -94,6 +94,21 @@ Cenário: 04 - Tentativa de cadastro campo senha vázio
     And I fill in the password field              ${EMPTY}
     When I click the "Register" button
     Then it should display the alert message      password é obrigatório  |   email é obrigatório   |  nome é obrigatório
+
+
+Cenário: 04 - Tentativa de cadastro usuário existente
+    [Documentation]    teste de tentantiva de cadastro falhas
+    [Tags]             attempt 
+
+    ${user}    Get JSON    User
+
+    Given I am on the login screen
+    And I click the "Sign Up" button
+    And I fill in the name field                  ${user}[user_existing][name]
+    And I fill in the email field                 ${user}[user_existing][email]
+    And I fill in the password field              ${user}[user_existing][password]
+    When I click the "Register" button
+    Then it should display the alert message      Este email já está sendo usado
 
 
 

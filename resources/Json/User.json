@@ -12,7 +12,7 @@
     "administrador": false
   },
   "user_existing": {
-    "nome": "Fulano da Silva",
+    "name": "Fulano da Silva",
     "email": "fulano@qa.com",
     "password": "teste",
     "administrador": "true"
