@@ -26,6 +26,17 @@ Start Browser
 Finish Browser
     Take Screenshot        fullPage=true
 
+
+And I fill in the email field 
+    [Arguments]    ${email}
+    
+    Fill Text    ${INPUT_EMAIL}    ${email}
+
+And I fill in the password field
+    [Arguments]    ${password}
+    
+    Fill Text    ${INPUT_PASSWORD}    ${password}
+
 Get JSON
 
     [Arguments]    ${json_path}
@@ -36,7 +47,33 @@ Get JSON
     
     Return From Keyword    ${json}
 
-Create User Admin
+Create User Profile Administrador
+    [Arguments]    ${name}    ${email}    ${password}    
+    
+    ${payload}=    Create Dictionary
+    ...    nome=${name}
+    ...    email=${email}
+    ...    password=${password}
+    ...    administrador=true
+
+    ${response}=    POST    ${API_URL}/usuarios
+    ...    json=${payload}
+    ...    headers=${HEADERS}
+    ...    expected_status=201
+
+    ${response}         Set Variable           ${response.json()}  
+
+    ${message}              Get From Dictionary    ${response}    message 
+    Should Be Equal As Strings    ${message}    Cadastro realizado com sucesso
+    Set Suite Variable      ${message}
+
+    Set Test Variable    ${_id}  ${response["_id"]}
+
+    Log    User created with ID: ${_id}
+
+    RETURN    ${response}
+    
+Create User Profile Common
     [Arguments]    ${name}    ${email}    ${password}    
     
     ${payload}=    Create Dictionary
@@ -77,17 +114,22 @@ Detete User By Id
     RETURN    ${response}
 
 Find User By Email
-    [Arguments]    ${email}  
+    [Arguments]    @{emails}
 
     Create Session    alias=serverest    url=${API_URL}/    headers=${HEADERS}
-
-    ${params}=    Create Dictionary    email=${email}
-
-    ${response}=    GET On Session    alias=serverest    url=usuarios    params=${params}
-    ...    expected_status=200    msg=Usuário não encontrado
     
-    Set Test Variable    ${_id}    ${response.json()['usuarios'][0]['_id']}
+    FOR    ${email}    IN    @{emails}
+        ${params}=    Create Dictionary    email=${email}
 
-    Log     _id: ${_id}    
+        ${response}=    GET On Session    alias=serverest    url=usuarios    params=${params}
+        ...    expected_status=200    msg=Usuário não encontrado
+    
+        ${usuarios}=    Evaluate    len(${response.json()['usuarios']}) > 0
+        IF    ${usuarios}
+            ${_id}=    Set Variable    ${response.json()['usuarios'][0]['_id']}
+            Log    Encontrado usuário com email: ${email} e _id: ${_id}
+            RETURN    ${response}
+        END
+    END
 
-    RETURN    ${response}
+    Fail    Nenhum usuário encontrado com os emails: ${emails}

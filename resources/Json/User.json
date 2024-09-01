@@ -5,7 +5,7 @@
     "password": "Abc@123",
     "administrador": true
   },
-  "user": {
+  "common": {
     "name": "Cristiano Ferreira",
     "email": "cristiano@user.com.br",
     "password": "Abc@123",
