@@ -11,7 +11,7 @@ Resource            ../Base.resource
 *** Variables ***
 ${BASE_URL}        https://front.serverest.dev/login
 ${BROWSER}         chromium
-${IS_HEADLESS}     False
+${IS_HEADLESS}     True
 
 ${API_URL}         https://serverest.dev
 &{HEADERS}         Content-Type=application/json
