@@ -14,6 +14,16 @@ And I fill in the name field
     
     Fill Text    ${INPUT_NAME}    ${name}
 
+And I fill in the email field 
+    [Arguments]    ${email}
+    
+    Fill Text    ${INPUT_EMAIL}    ${email}
+
+And I fill in the password field
+    [Arguments]    ${password}
+    
+    Fill Text    ${INPUT_PASSWORD}    ${password}
+
 And I check the "Administrator" option    
 
     Check Checkbox    ${INPUT_ADMIN}    
@@ -23,6 +33,14 @@ When I click the "Register" button
     Click    ${BTN_REGISTER}
 
 Then the message should be displayed
-    [Arguments]        ${message}
+    [Arguments]        ${msg}
+    
+    ${user}    Get JSON    User
 
-    Wait For Elements State    css=a >> text=${message}    visible    5   
+    Wait For Elements State    css=a >> text=${msg}    visible    5
+
+    Find User By Email    ${user}[admin][email]    
+
+    Sleep    3
+    
+    Detete User By Id 

@@ -10,7 +10,11 @@ Given I am on the login screen
     Wait For Elements State   ${TITLE}    visible    5 
 
 And fill in the credentials
-    [Arguments]    ${name}    ${email}    ${password}    
+    [Arguments]    ${name}    ${email}    ${password}
+
+    ${user}    Get JSON    User
+
+    Create User Admin    ${user}[admin][name]    ${user}[admin][email]    ${user}[admin][password]
     
     Fill Text    ${INPUT_EMAIL}    ${email}
     
@@ -20,10 +24,10 @@ When I click the "Login" button
 
     ${user}    Get JSON    User
 
-    Click    ${BTN_LOGIN}   
+    Click    ${BTN_LOGIN}
 
-Then display the welcome message
-    [Arguments]        ${name}
+    Find User By Email    ${user}[admin][email]
 
-    Wait For Elements State    css=h1 >> text=${name}   visible    5  
+    Sleep    3
     
+    Detete User By Id 

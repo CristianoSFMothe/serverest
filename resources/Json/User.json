@@ -5,28 +5,10 @@
     "password": "Abc@123",
     "administrador": true
   },
-  "common": {
-    "name": "Cristiano Ferreira",
-    "email": "cristiano@common.com.br",
-    "password": "Abc@123",
-    "administrador": false
-  },
-  "incorrect_email": {
-    "name": "Cristiano Ferreira",
-    "email": "cristiano@user.com",
-    "password": "Abc@123",
-    "administrador": false
-  },
-  "incorrect_password": {
+  "user": {
     "name": "Cristiano Ferreira",
     "email": "cristiano@user.com.br",
-    "password": "Abc@1234",
+    "password": "Abc@123",
     "administrador": false
-  },
-  "user_existing": {
-    "name": "Fulano da Silva",
-    "email": "fulano@qa.com",
-    "password": "teste",
-    "administrador": "true"
   }
 }
