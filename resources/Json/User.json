@@ -10,5 +10,11 @@
     "email": "cristiano@user.com.br",
     "password": "Abc@123",
     "administrador": false
+  },
+  "user_existing": {
+    "nome": "Fulano da Silva",
+    "email": "fulano@qa.com",
+    "password": "teste",
+    "administrador": "true"
   }
 }
