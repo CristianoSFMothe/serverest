@@ -7,8 +7,20 @@
   },
   "common": {
     "name": "Cristiano Ferreira",
-    "email": "cristiano@user.com.br",
+    "email": "cristiano@common.com.br",
     "password": "Abc@123",
+    "administrador": false
+  },
+  "incorrect_email": {
+    "name": "Cristiano Ferreira",
+    "email": "cristiano@user.com",
+    "password": "Abc@123",
+    "administrador": false
+  },
+  "incorrect_password": {
+    "name": "Cristiano Ferreira",
+    "email": "cristiano@user.com.br",
+    "password": "Abc@1234",
     "administrador": false
   },
   "user_existing": {

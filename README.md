@@ -67,8 +67,14 @@ pip install -r requirements.txt
 - [x] Cadastro de usuário com perfil comum
 - [x] Tentativa de cadastro de usuário com perfil comum
   - [x] Usuário com e-mail já existente
-  - [x] Campo nome vázio
-  - [x] Campo e-mail vázio
-  - [x] Campo senha vázio
-  - [x] Todos os campos vázios
+  - [x] Campo nome vazio
+  - [x] Campo e-mail vazio
+  - [x] Campo senha vazio
+  - [x] Todos os campos vazios
 - [x] Login com usuário perfil administrador
+- [x] Login com usuário perfil comum
+  - [x] Tentativa de login com e-mail incorreto
+  - [x] Tentativa de login com senha incorreto
+  - [x] Tentativa de login com e-mail vazio
+  - [x] Tentativa de login com senha vazio
+  - [x] Tentativa de login com ambos vazios

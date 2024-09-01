@@ -21,7 +21,7 @@ ${_id}
 Start Browser
     New Browser    browser=${BROWSER}    headless=${IS_HEADLESS}    
     New Page       ${BASE_URL}
-    Set Viewport Size    1920    1080
+    Set Viewport Size    120    1080
 
 Finish Browser
     Take Screenshot        fullPage=true
@@ -36,6 +36,17 @@ And I fill in the password field
     [Arguments]    ${password}
     
     Fill Text    ${INPUT_PASSWORD}    ${password}
+
+Then it should display the alert message
+    [Arguments]    @{messages}
+    
+    FOR    ${message}    IN    @{messages}
+        ${is_visible}=    Run Keyword And Return Status    Wait For Elements State    css=span >> text=${message}    visible    5
+        IF    ${is_visible}
+            Exit For Loop
+        END
+    END
+    Should Be True    ${is_visible} 
 
 Get JSON
 
@@ -80,7 +91,7 @@ Create User Profile Common
     ...    nome=${name}
     ...    email=${email}
     ...    password=${password}
-    ...    administrador=true
+    ...    administrador=false
 
     ${response}=    POST    ${API_URL}/usuarios
     ...    json=${payload}
@@ -114,22 +125,19 @@ Detete User By Id
     RETURN    ${response}
 
 Find User By Email
-    [Arguments]    @{emails}
+    [Arguments]    ${email}  
 
     Create Session    alias=serverest    url=${API_URL}/    headers=${HEADERS}
-    
-    FOR    ${email}    IN    @{emails}
-        ${params}=    Create Dictionary    email=${email}
 
-        ${response}=    GET On Session    alias=serverest    url=usuarios    params=${params}
-        ...    expected_status=200    msg=Usuário não encontrado
-    
-        ${usuarios}=    Evaluate    len(${response.json()['usuarios']}) > 0
-        IF    ${usuarios}
-            ${_id}=    Set Variable    ${response.json()['usuarios'][0]['_id']}
-            Log    Encontrado usuário com email: ${email} e _id: ${_id}
-            RETURN    ${response}
-        END
-    END
+    ${params}=    Create Dictionary    email=${email}
 
-    Fail    Nenhum usuário encontrado com os emails: ${emails}
+    ${response}=    GET On Session    alias=serverest    url=usuarios    params=${params}
+    ...    expected_status=200    msg=Usuário não encontrado
+    
+    Set Test Variable    ${_id}    ${response.json()['usuarios'][0]['_id']}
+
+    Log     _id: ${_id}   
+
+    Log To Console     _id: ${_id}    
+
+    RETURN    ${response}

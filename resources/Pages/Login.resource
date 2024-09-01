@@ -20,13 +20,10 @@ When I click the "Login" button
 
     ${user}    Get JSON    User
 
-    Click    ${BTN_LOGIN}
+    Click    ${BTN_LOGIN}   
 
-    ${response}=    Find User By Email    ${user}[admin][email]    ${user}[common][email]
+Then display the welcome message
+    [Arguments]        ${name}
 
-    Sleep    3
+    Wait For Elements State    css=h1 >> text=${name}   visible    5  
     
-    Detete User By Id 
-
-
-

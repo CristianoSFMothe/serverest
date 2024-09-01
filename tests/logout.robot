@@ -12,9 +12,7 @@ Cenário: 01 - Criar conta como administrador
     [Documentation]    teste para cadastrar usuário perfil administrador
     [Tags]             admin_create
 
-    ${user}    Get JSON    User
-
-    
+    ${user}    Get JSON    User    
 
     Given I am on the login screen
     And I click the "Sign Up" button
@@ -34,7 +32,7 @@ Cenário: 01 - Criar conta como administrador
 
 Cenário: 02 - Criar conta como usuário comum
     [Documentation]    teste para cadastrar usuário perfil comum
-    [Tags]             user
+    [Tags]             user_create
     
     ${user}    Get JSON    User
 
@@ -52,7 +50,7 @@ Cenário: 02 - Criar conta como usuário comum
     
     Detete User By Id 
 
-Cenário: 03 - Tentativa de cadastro campo nome vázio
+Cenário: 03 - Tentativa de cadastro campo nome vazio
     [Documentation]    teste de tentantiva de cadastro falhas
     [Tags]             name_empty    
 
@@ -66,7 +64,7 @@ Cenário: 03 - Tentativa de cadastro campo nome vázio
     When I click the "Register" button
     Then it should display the alert message      nome é obrigatório
 
-Cenário: 04 - Tentativa de cadastro campo e-mail vázio
+Cenário: 04 - Tentativa de cadastro campo e-mail vazio
     [Documentation]    teste de tentantiva de cadastro falhas
     [Tags]             email_empty    
 
@@ -80,7 +78,7 @@ Cenário: 04 - Tentativa de cadastro campo e-mail vázio
     When I click the "Register" button
     Then it should display the alert message      email é obrigatório
 
-Cenário: 05 - Tentativa de cadastro campo senha vázio
+Cenário: 05 - Tentativa de cadastro campo senha vazio
     [Documentation]    teste de tentantiva de cadastro falhas
     [Tags]             password_empty    
 
@@ -95,7 +93,7 @@ Cenário: 05 - Tentativa de cadastro campo senha vázio
     Then it should display the alert message      password é obrigatório
 
 
-Cenário: 04 - Tentativa de cadastro todos campos vázios
+Cenário: 04 - Tentativa de cadastro todos campos vazios
     [Documentation]    teste de tentantiva de cadastro falhas
     [Tags]             all_field_empty    
 
