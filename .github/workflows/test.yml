@@ -26,4 +26,8 @@ jobs:
       with:
         python-version: 3.12
         
-   
+    - name: Test
+      run: |
+        node --version
+        python --version
+
