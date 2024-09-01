@@ -34,11 +34,12 @@ When I click the "Register" button
 
 Then the message should be displayed
     [Arguments]        ${msg}
-    [Timeout]          10s
+    
+    ${user}    Get JSON    User
 
     Wait For Elements State    css=a >> text=${msg}    visible    5
 
-    Find User By Email
+    Find User By Email    ${user}[admin][email]    
 
     Sleep    3
     

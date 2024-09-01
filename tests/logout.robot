@@ -33,13 +33,7 @@ Cenário: 02 - Criar conta como usuário comum
     Given I am on the login screen
     And I click the "Sign Up" button
     And I fill in the name field              ${user}[user][name]
-    Sleep    1
     And I fill in the email field             ${user}[user][email]
-    Sleep    1
     And I fill in the password field          ${user}[user][password]
-    Sleep    1
     When I click the "Register" button
-    Sleep    1
     Then you should see the home page         Serverest Store
-
-    Sleep    3

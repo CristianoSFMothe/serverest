@@ -10,11 +10,11 @@ Given I am on the login screen
     Wait For Elements State   ${TITLE}    visible    5 
 
 And fill in the credentials
-    [Arguments]    ${email}    ${password}
+    [Arguments]    ${name}    ${email}    ${password}
 
     ${user}    Get JSON    User
 
-    Create User Admin    ${user}[admin][name]    ${user}[admin][name]    ${user}[admin][name]
+    Create User Admin    ${user}[admin][name]    ${user}[admin][email]    ${user}[admin][password]
     
     Fill Text    ${INPUT_EMAIL}    ${email}
     
@@ -26,7 +26,7 @@ When I click the "Login" button
 
     Click    ${BTN_LOGIN}
 
-    Find User By Email    ${user}[admin][name]
+    Find User By Email    ${user}[admin][email]
 
     Sleep    3
     
