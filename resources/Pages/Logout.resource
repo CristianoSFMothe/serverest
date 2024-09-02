@@ -33,14 +33,21 @@ When I click the "Register" button
     Click    ${BTN_REGISTER}
 
 Then the message should be displayed
-    [Arguments]        ${msg}
+    [Arguments]        ${message}
     
     ${user}    Get JSON    User
 
-    Wait For Elements State    css=a >> text=${msg}    visible    5
+    Wait For Elements State    css=a >> text=${message}    visible    5
 
     Find User By Email    ${user}[admin][email]    
 
     Sleep    3
     
     Detete User By Id 
+
+
+Then it should display the alert message
+    [Arguments]    @{messages}
+    FOR    ${message}    IN    @{messages}
+        Wait For Elements State    css=span >> text=${message}    visible    5
+    END
