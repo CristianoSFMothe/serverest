@@ -10,6 +10,11 @@ And I am redirected to the main screen
 
     Wait For Elements State    css=h1 >> text=${name}   visible    5   
 
+Then I am redirected to the main screen
+    [Arguments]        ${name}
+
+    Wait For Elements State    css=h1 >> text=${name}   visible    5   
+
 
 Then you should see the home page
     [Arguments]    ${expected_text}

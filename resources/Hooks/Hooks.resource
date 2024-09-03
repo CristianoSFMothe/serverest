@@ -21,7 +21,6 @@ ${_id}
 Start Browser
     New Browser    browser=${BROWSER}    headless=${IS_HEADLESS}    
     New Page       ${BASE_URL}
-    Set Viewport Size    1920    1080
 
 Finish Browser
     Take Screenshot        fullPage=true

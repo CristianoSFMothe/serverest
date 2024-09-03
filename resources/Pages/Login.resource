@@ -20,6 +20,17 @@ And fill in the credentials
     
     Fill Text    ${INPUT_PASSWORD}    ${password}
 
+And fill in the invalid credentials
+    [Arguments]    ${email}    ${password}
+
+    ${user}    Get JSON    User
+
+    Create User Admin    ${user}[admin][name]    ${user}[admin][email]    ${user}[admin][password]
+    
+    Fill Text    ${INPUT_EMAIL}    ${email}
+    
+    Fill Text    ${INPUT_PASSWORD}    ${password}
+
 When I click the "Login" button
 
     ${user}    Get JSON    User

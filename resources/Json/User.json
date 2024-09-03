@@ -10,5 +10,13 @@
     "email": "cristiano@user.com.br",
     "password": "Abc@123",
     "administrador": false
+  },
+  "invalid_email": {
+    "email": "fulano@qa.co",
+    "password": "teste"
+  },
+  "invalid_password": {
+    "email": "fulano@qa.com",
+    "password": "123456"
   }
 }

@@ -66,7 +66,7 @@ Cenário: 04 - Tentiva de criar conta como usuário e-mail em branco
     When I click the "Register" button
     Then it should display the alert message        Email é obrigatório
 
-Cenário: 03 - Tentiva de criar conta como usuário senha em branco
+Cenário: 05 - Tentiva de criar conta como usuário senha em branco
     [Documentation]    cadastrar sem preencher o campo senha
     [Tags]             pass_empty
     
@@ -80,7 +80,7 @@ Cenário: 03 - Tentiva de criar conta como usuário senha em branco
     When I click the "Register" button
     Then it should display the alert message        Password é obrigatório
 
-Cenário: 03 - Tentiva de criar conta como usuário todos os campos em branco
+Cenário: 06 - Tentiva de criar conta como usuário todos os campos em branco
     [Documentation]    cadastrar sem preencher todos os campo em branco
     [Tags]             all_empty
     
