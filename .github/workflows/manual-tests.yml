@@ -6,7 +6,7 @@ on:
       tag:
         description: 'Tag for the tests to run'
         required: true
-        type: string  # Define que o input deve ser uma string
+        type: string
 
 jobs:
   manual-tests:
