@@ -13,11 +13,8 @@ Cenário: 01 - Realizar login com conta de administrador
     [Tags]             admin    
 
     ${user}    Get JSON    User
-
-    Given I am on the login screen
-    And fill in the credentials                  ${user}[admin][name]     
-    ...                                          ${user}[admin][email]    
-    ...                                          ${user}[admin][password]   
+    
+    Given I log in as an administrator        ${user}[admin][email]    ${user}[admin][password]    
     When I click the "Login" button 
     Then I am redirected to the main screen      Bem Vindo ${user}[admin][name]
 
@@ -27,9 +24,8 @@ Cenário: 02 - Tentar realizar login com e-mail incorredo
 
     ${user}    Get JSON    User
 
-    Given I am on the login screen
-    And fill in the invalid credentials           ${user}[invalid_email][email]     
-    ...                                           ${user}[invalid_email][password]                     
+    Given I log in as an administrator           ${user}[invalid_email][email]     
+    ...                                          ${user}[invalid_email][password]                     
     When I click the "Login" button 
     Then it should display the alert message      Email e/ou senha inválidos
     
@@ -38,9 +34,8 @@ Cenário: 03 - Tentar realizar login com senha incorredo
     [Tags]             invalid_password    
 
     ${user}    Get JSON    User
-
-    Given I am on the login screen
-    And fill in the invalid credentials           ${user}[invalid_password][email]     
+    
+    Given I log in as an administrator            ${user}[invalid_password][email]     
     ...                                           ${user}[invalid_password][password]                     
     When I click the "Login" button 
     Then it should display the alert message      Email e/ou senha inválidos
@@ -51,8 +46,7 @@ Cenário: 03 - Tentar realizar login com e-mail em branco
 
     ${user}    Get JSON    User
 
-    Given I am on the login screen
-    And fill in the invalid credentials           ${EMPTY}    ${user}[invalid_password][password]                     
+    Given I log in as an administrator            ${EMPTY}    ${user}[invalid_password][password]                     
     When I click the "Login" button 
     Then it should display the alert message      email é obrigatório
 
@@ -62,7 +56,6 @@ Cenário: 04 - Tentar realizar login com senha em branco
 
     ${user}    Get JSON    User
 
-    Given I am on the login screen
-    And fill in the invalid credentials           ${user}[invalid_password][email]    ${EMPTY}                  
+    Given I log in as an administrator            ${user}[invalid_password][email]    ${EMPTY}                  
     When I click the "Login" button 
     Then it should display the alert message      password é obrigatório

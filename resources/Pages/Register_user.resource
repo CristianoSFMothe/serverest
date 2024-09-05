@@ -51,3 +51,37 @@ Then it should display the alert message
     FOR    ${message}    IN    @{messages}
         Wait For Elements State    css=span >> text=${message}    visible    5
     END
+
+
+And I click the "Register" button on the user card
+    [Arguments]    ${card_name}
+
+    Wait For Elements State    css=h5 >> text=${card_name}    visible    5
+
+    Click button    cadastrarUsuarios    Cadastrar
+
+And I fill in the user details without selecting the administrator option
+    [Arguments]    ${name}    ${email}    ${password}
+
+    Fill Text    ${INPUT_NAME}        ${name}
+    Fill Text    ${INPUT_EMAIL}       ${email}
+    Fill Text    ${INPUT_PASSWORD}    ${password}
+
+Then I should see the user screen
+    [Arguments]    ${expected_text}    ${email_user}
+
+    ${user}    Get JSON    User
+
+    Wait For Elements State    css=h1 >> text=${expected_text}
+    Wait For Elements State    css=td >> text=${email_user}
+
+    Find User By Email    ${user}[admin][email]
+    
+    Detete User By Id 
+
+    Find User By Email    ${user}[create_user][email]
+    
+    Detete User By Id 
+
+
+

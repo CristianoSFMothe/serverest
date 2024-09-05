@@ -35,6 +35,36 @@ Get JSON
     
     Return From Keyword    ${json}
 
+Given I log in as an administrator
+    [Arguments]    ${email}    ${password}
+
+    ${user}    Get JSON    User
+
+    Create User Admin    ${user}[admin][name]     
+    ...                  ${user}[admin][email]    
+    ...                  ${user}[admin][password]
+    
+    Fill Text    ${INPUT_EMAIL}       ${email}
+    
+    Fill Text    ${INPUT_PASSWORD}    ${password}
+
+And I click the Login button
+
+    Click    ${BTN_LOGIN}
+    
+Click button
+    [Arguments]    ${card_name}    ${btn_text}
+
+    ${btn_text}    Set Variable
+    ...            css=[data-testid='${card_name}'] >> text=${btn_text}
+    
+    Click    ${btn_text}
+
+And I should see the page title
+    [Arguments]    ${expected_text}
+
+    Wait For Elements State    css=h1 >> text=${expected_text}
+
 Create User Admin
     [Arguments]    ${name}    ${email}    ${password}    
     

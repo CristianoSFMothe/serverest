@@ -18,5 +18,11 @@
   "invalid_password": {
     "email": "fulano@qa.com",
     "password": "123456"
+  },
+  "create_user": {
+    "name": "Usuário Teste",
+    "email": "user@teste.com",
+    "password": "teste",
+    "administrador": true
   }
 }

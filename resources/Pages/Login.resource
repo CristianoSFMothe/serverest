@@ -27,7 +27,7 @@ And fill in the invalid credentials
 
     Create User Admin    ${user}[admin][name]    ${user}[admin][email]    ${user}[admin][password]
     
-    Fill Text    ${INPUT_EMAIL}    ${email}
+    Fill Text    ${INPUT_EMAIL}       ${email}
     
     Fill Text    ${INPUT_PASSWORD}    ${password}
 
