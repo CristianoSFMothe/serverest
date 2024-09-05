@@ -1,0 +1,52 @@
+name: Manual Test Execution
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag for the tests to run'
+        required: true
+        type: string  # Define que o input deve ser uma string
+
+jobs:
+  manual-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get Code
+      uses: actions/checkout@v4
+
+    - name: Use Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: Setup Python
+      uses: actions/setup-python@v5.2.0
+      with:
+        python-version: 3.12
+
+    - name: Install Deps
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Browser Init
+      run: rfbrowser init
+
+    - name: Run Specific Tag E2E Tests
+      run: |
+        robot -d ./logs -v BROWSER:chromium -v IS_HEADLESS:True --include ${{ github.event.inputs.tag }} tests
+
+    - name: Robot Report 
+      uses: joonvena/robotframework-reporter-action@v2.4
+      if: always()
+      with:
+        gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+        report_path: logs
+
+    - name: Upload Report
+      uses: actions/upload-artifact@v4.3.5
+      with:
+        name: Test Report for Tag ${{ github.event.inputs.tag }}
+        path: logs
