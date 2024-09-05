@@ -3,13 +3,8 @@ name: Manual Test Execution
 on:
   workflow_dispatch:
     inputs:
-      test_file:
-        description: 'Name of the test file to run (e.g., add_user.robot)'
-        required: true
-        type: string
-        default: 'add_user.robot'
-      scenario:
-        description: 'Name of the scenario to run (e.g., "Cenário: 01 - Criar conta como administrador")'
+      tag:
+        description: 'Tag for the tests to run'
         required: true
         type: string
 
@@ -39,24 +34,9 @@ jobs:
     - name: Browser Init
       run: rfbrowser init
 
-    - name: List Test Scenarios
-      id: list_scenarios
+    - name: Run Specific Tag E2E Tests
       run: |
-        if [ -f tests/${{ github.event.inputs.test_file }} ]; then
-          grep -E '^\*\*\* Test Cases \*\*\*' -A 20 tests/${{ github.event.inputs.test_file }}
-        else
-          echo "Test file not found!"
-          exit 1
-        fi
-
-    - name: Run Specific Test with Scenario
-      run: |
-        if [ -f tests/${{ github.event.inputs.test_file }} ]; then
-          robot -d ./logs -v BROWSER:chromium -v IS_HEADLESS:True --test "${{ github.event.inputs.scenario }}" tests/${{ github.event.inputs.test_file }}
-        else
-          echo "Test file not found!"
-          exit 1
-        fi
+        robot -d ./logs -v BROWSER:chromium -v IS_HEADLESS:True --include ${{ github.event.inputs.tag }} tests
 
     - name: Robot Report 
       uses: joonvena/robotframework-reporter-action@v2.4
@@ -68,5 +48,5 @@ jobs:
     - name: Upload Report
       uses: actions/upload-artifact@v4.3.5
       with:
-        name: Test Report for File ${{ github.event.inputs.test_file }}
+        name: Test Report for Tag ${{ github.event.inputs.tag }}
         path: logs
